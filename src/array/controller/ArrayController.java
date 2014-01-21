@@ -8,6 +8,7 @@ public class ArrayController
 	private String [][] friendNames;
 	private int [][] myFamilyAges;
 	private ArrayView consoleView;
+	private MarshmellowMan [][] myMarshmellowMan;
 	
 	//Constructor: makes objects and assigns values
 	public ArrayController()
@@ -15,6 +16,7 @@ public class ArrayController
 		myFamilyAges = new int [3][3];
 		friendNames = new String [4][4];
 		consoleView = new ArrayView();
+		myMarshmellowMan = new MarshmellowMan();
 		
 	}
 	
@@ -33,6 +35,13 @@ public class ArrayController
 	public void setFriendNames(String[][] friendNames)
 	{
 		this.friendNames = friendNames;
+	}
+	
+	private void fillCookie()
+	{
+		myMarshmellowMan[0][0] = new MarshmelllowMan();
+		myMarshmellowMan[0][1] = new MarshmellowMan("Kiani", true, 7, 8, 9);
+		
 	}
 	private void fillAges()
 	{
@@ -72,6 +81,8 @@ public class ArrayController
 	}
 	public void start()
 	{
+		fillCookie();
+		fillNames();
 		fillAges();
 		consoleView.printIntInformation(myFamilyAges);
 	}
